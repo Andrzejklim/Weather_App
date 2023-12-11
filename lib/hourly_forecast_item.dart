@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class HourlyForecastItem extends StatelessWidget {
-  const HourlyForecastItem({required this.time, required this.icon, required this.temp,super.key});
+  const HourlyForecastItem({required this.time, required this.imageUrl, required this.temp,super.key});
 
   final String time;
-  final IconData icon;
+  final String imageUrl;
   final String temp;
 
   @override
@@ -29,10 +29,8 @@ class HourlyForecastItem extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            Icon(
-              icon,
-              size: 35,
-            ),
+            Image.network('https://openweathermap.org/img/w/$imageUrl.png', height: 35, width: 35,),
+
             const SizedBox(
               height: 8,
             ),
