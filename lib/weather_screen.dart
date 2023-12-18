@@ -19,10 +19,9 @@ class WeatherScreen extends StatefulWidget {
 class _WeatherScreenState extends State<WeatherScreen> {
   double temp = 0;
   String cityName = "Manchester";
-  late Future<Map<String,dynamic>> weather;
+  late Future<Map<String, dynamic>> weather;
 
   Future<Map<String, dynamic>> getCurrentWeather() async {
-    
     try {
       final res = await http.get(
         Uri.parse(
@@ -42,7 +41,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     }
   }
 
-   @override
+  @override
   void initState() {
     super.initState();
     weather = getCurrentWeather();
@@ -152,36 +151,23 @@ class _WeatherScreenState extends State<WeatherScreen> {
               const SizedBox(
                 height: 5,
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    // for (int i = 1; i < 8; i++)
-                    //   HourlyForecastItem(
-                    //     time: unixToTime(data['list'][i - 1]['dt']),
-                    //     imageUrl:
-                    //         (data['list'][i]['weather'][0]['icon']).toString(),
-                    //     temp: (data['list'][i]['main']['temp']).toString(),
-                    //   ),
-                    SizedBox(
-                      height: 120,
-                      width: 400,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 8,
-                        itemBuilder: (context, index) {
-                          return HourlyForecastItem(
-                            time: unixToTime(data['list'][index]['dt']),
-                            imageUrl: (data['list'][index]['weather'][0]
-                                    ['icon'])
-                                .toString(),
-                            temp: (data['list'][index]['main']['temp'])
-                                .toString(),
-                          );
-                        },
-                      ),
-                    ),
-                  ],
+              Container(
+                height: 150,
+                alignment: Alignment.center,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 8,
+                  itemBuilder: (context, index) {
+                    return HourlyForecastItem(
+                      time: unixToTime(data['list'][index]['dt']),
+                      imageUrl: (data['list'][index]['weather'][0]
+                              ['icon'])
+                          .toString(),
+                      temp: (data['list'][index]['main']['temp'])
+                          .toString(),
+                    );
+                  },
                 ),
               ),
               const SizedBox(
@@ -196,7 +182,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
               ),
               Row(
                 // mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   AdditionalInfoItem(
@@ -213,7 +199,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       value: '$currentPressure'),
                 ],
               )
-            ]),
+            ],
+            ),
           );
         },
       ),

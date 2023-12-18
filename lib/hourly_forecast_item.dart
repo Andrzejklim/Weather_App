@@ -20,7 +20,7 @@ class HourlyForecastItem extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Time $time",
+              time,
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
