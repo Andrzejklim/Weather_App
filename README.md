@@ -1,7 +1,7 @@
 # weather_app
 Welcome to my weather app.
 You can see the current temperature in K (Kelvin), weather description and the forecast for the upcoming hours. Additionaly you can see information about current humidity, wind speed and pressure.
-![image](https://github.com/Andrzejklim/Weather_App/assets/100627273/62541623-7147-4ebf-94bc-515aed11c29d)
+![image](https://github.com/Andrzejklim/Weather_App/assets/100627273/bf52eae9-e718-47f7-bcb7-299d68bf0b76)
 
 
 ## Getting Started
