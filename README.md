@@ -1,7 +1,7 @@
 # weather_app
-
-A new Flutter project.
-![image](https://github.com/Andrzejklim/Weather_App/assets/100627273/bdf30b63-fca8-4d5b-8424-32bdd85e4660)
+Welcome to my weather app.
+![image](https://github.com/Andrzejklim/Weather_App/assets/100627273/7ca6e649-a813-4bca-8e93-428220d24484)
+You can see the current temperature in K (Kelvin), weather description and the forecast for the upcoming hours. Additionaly you can see information about current humidity, wind speed and pressure.
 
 
 ## Getting Started
